@@ -1,5 +1,16 @@
 {
-    "Equipment":[
+    "setting":{
+            "cursePrice":0,
+            "plusModifierPrice":50,
+            "minusModifierPrice":50,
+            "capacityPrice":100,
+            "entryName":{
+                "equipment":"装備ディスク",
+                "memory":"記憶ディスク",
+                "container":"やばいもの"
+            }
+        },
+    "equipment":[
         {
             "name" : "スター・プラチナ",
             "part":[3,4,6],

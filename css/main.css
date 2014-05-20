@@ -1,0 +1,24 @@
+body {
+    width:640px;
+    height:1280px;
+}
+#main {
+    top:0;
+    left:0;
+    width:640px;
+    height:1280px;
+    position:absolute;
+}
+#input{
+    top:0;
+    left:0;
+    width:640px;
+    height:300px;
+    position:absolute;
+}
+
+#price{
+    top:50px;
+    left:50px;
+    position:absolute;
+}
