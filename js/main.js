@@ -2,7 +2,7 @@ var diavolo = new diavoloJson();
 function appraisal(){
     var itemType;
     var tradeType;
-    var inputPrice = Number($("input#price").value);
+    var inputPrice = Number($("input#price").val());
 
     var list = new Array();
     $.each($("input.itemType"),function(){
@@ -15,13 +15,31 @@ function appraisal(){
             tradeType = this.value;
         }
     })
-    $.each(diavolo.json[test],function(item){
-        
+    $.each(diavolo.json[itemType],function(index,item){
+        list.push(priceCheck(item,tradeType,itemType,inputPrice,0));
     })
+    list = $.grep(list, function(e){return e;});
 }
 
-function priceCheck(json,modifierPrice,itemType){
-
+function priceCheck(item,tradeType,itemType,price,count){
+    var modifire = 0;
+    var itemObject;
+    if(itemType == "equipment"){
+        modifire = diavolo.json.setting.plusModifierPrice * count;
+    }else if(itemType == "container"){
+        modifire = diavolo.json.setting.plusModifierPrice * count;
+    }
+    if(item[tradeType]+modifire == price){
+        itemObject = $.extend(true,{},item);
+        if(count > 0){
+            itemObject.name = itemObject.name +"+"+count;
+        }
+    }else if(count < 3 && itemType == "equipment"){
+        itemObject = priceCheck(item,tradeType,itemType,price,count+1);
+    }else if(count < 9 && itemType == "container"){
+        itemObject = priceCheck(item,tradeType,itemType,price,count+1);
+    }
+    return itemObject
 }
 
 function numOnly(){
