@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <script src="./js/lib/jquery-1.11.0.min.js" charset="utf-8"></script>
+    <script src="./src/diavoloJson.js"></script>
     <script src="./js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
     <meta charset="UTF-8"/>
@@ -11,10 +12,20 @@
 </head>
 <body>
     <div id="main">
-        <h1 text-align="center">店鑑定補助<h1>
+        <div id="firstHalf" class="serif">店主「この</a>
         <form id="input">
-            <input id="price" name="price" type="text">
+            <input type="radio" class="itemType" name="itemType" value="equipment" checked>装備ディスク
+            <input type="radio" class="itemType" name="itemType" value="memory">記憶ディスク
+            <input type="radio" class="itemType" name="itemType" value="container">やばいもの
+            <br />     の<br />
+            <input type="radio" class="tradeType" name="tradeType" value="buy" checked>買い値
+            <input type="radio" class="tradeType" name="tradeType" value="sell">売り値
+            <br />     は<br />
+            <input id="price" name="price" value="0">
+            <button id="appraisalButton" type="button" onclick="appraisal()">鑑定</button>
         </form>
+        <div id="lastHalf" class="serif">になります。」</div>
+        <div id="result"></div>
     </div>
 </body>
 </html>

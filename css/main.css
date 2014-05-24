@@ -7,18 +7,41 @@ body {
     left:0;
     width:640px;
     height:1280px;
-    position:absolute;
+    position:relative;
 }
 #input{
     top:0;
     left:0;
     width:640px;
-    height:300px;
-    position:absolute;
+    height:80px;
+    position:relative;
 }
 
 #price{
-    top:50px;
-    left:50px;
-    position:absolute;
+    top:0px;
+    left:20px;
+    position:relative;
+}
+
+.serif{
+    position: relative;
+}
+#firstHalf{
+    top:30px;
+    left:20px;
+}
+#lastHalf {
+    top:30px;
+    left:120px;
+}
+
+.itemTypeRadio{
+    top:0px;
+    left:0px;
+    position:relative;
+}
+
+#appraisalButton{
+    left:20px;
+    position:relative;    
 }
