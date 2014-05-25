@@ -40,7 +40,7 @@ function priceCheck(item,tradeType,itemType,price,count){
     if(itemType == "equipment"){
         modifire = diavolo.json.setting.plusModifierPrice * count;
     }else if(itemType == "container"){
-        modifire = diavolo.json.setting.plusModifierPrice * count;
+        modifire = diavolo.json.setting.capacityPrice * count;
     }
     if(item[tradeType]+modifire == price){
         itemObject = $.extend(true,{},item);
