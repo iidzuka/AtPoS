@@ -1,5 +1,6 @@
 var diavolo = new diavoloJson();
 function appraisal(){
+    $("#result").empty();
     var itemType;
     var tradeType;
     var inputPrice = Number($("input#price").val());
@@ -19,6 +20,18 @@ function appraisal(){
         list.push(priceCheck(item,tradeType,itemType,inputPrice,0));
     })
     list = $.grep(list, function(e){return e;});
+    $.each(list,function(index,item){
+        var writeText = item.name;
+        if(itemType == "equipment"){
+            writeText = writeText + " 登場部:" + item.part.join(",");
+            if(item.curse){
+                writeText = writeText +" 呪"
+            }
+        }
+         $('<div class="result">')
+            .appendTo("#result")
+            .html(writeText);
+    })
 }
 
 function priceCheck(item,tradeType,itemType,price,count){
@@ -32,11 +45,11 @@ function priceCheck(item,tradeType,itemType,price,count){
     if(item[tradeType]+modifire == price){
         itemObject = $.extend(true,{},item);
         if(count > 0){
-            itemObject.name = itemObject.name +"+"+count;
+            itemObject.name = itemObject.name +" +"+count;
         }
     }else if(count < 3 && itemType == "equipment"){
         itemObject = priceCheck(item,tradeType,itemType,price,count+1);
-    }else if(count < 9 && itemType == "container"){
+    }else if(count < 9 && itemType == "container" && !(item.fixation)){
         itemObject = priceCheck(item,tradeType,itemType,price,count+1);
     }
     return itemObject
