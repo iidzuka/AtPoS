@@ -75,6 +75,14 @@ function numOnly(){
     }
 }
 
+function submitStop(e){
+    if (!e) var e = window.event;
+ 
+    if(e.keyCode == 13){
+        appraisal();
+        return false;
+    }
+}
 $(function(){
     $("#price").on(numOnly());
 })
