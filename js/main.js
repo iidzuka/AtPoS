@@ -47,7 +47,7 @@ function priceCheck(item,tradeType,itemType,price,count){
         if(count > 0){
             itemObject.name = itemObject.name +" +"+count;
         }
-    }else if(count < 3 && itemType == "equipment"){
+    }else if(count < 3 && itemType == "equipment" && !(item.curse)){
         itemObject = priceCheck(item,tradeType,itemType,price,count+1);
     }else if(count < 9 && itemType == "container" && !(item.fixation)){
         itemObject = priceCheck(item,tradeType,itemType,price,count+1);
@@ -83,6 +83,7 @@ function submitStop(e){
         return false;
     }
 }
+
 $(function(){
     $("#price").on(numOnly());
 })
