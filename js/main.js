@@ -68,6 +68,7 @@ function numOnly(){
             });
             if(s.length > 0){
                 $this.val( s.join('') );
+                appraisal();
             } else{
                 $this.val('');
             }
