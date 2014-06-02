@@ -1,7 +1,7 @@
 function diavoloJson(){
     this.json = {
         "setting":{
-            "vartion":"2013-09-26",
+            "vartion":"2012-02-14",
             "cursePrice":0,
             "plusModifierPrice":50,
             "minusModifierPrice":50,
@@ -226,8 +226,8 @@ function diavoloJson(){
                 "name":"イン・ア・サイレント・ウェイ",
                 "part":[7],
                 "curse":false,
-                "buy":3800,
-                "sell":1900
+                "buy":5800,
+                "sell":2900
             },
             {
                 "name":"スケアリー・モンスターズ",
@@ -265,7 +265,7 @@ function diavoloJson(){
                 "sell":400
             },
             {
-                "name":"GGG・オブ・ホーム",
+                "name":"?(緑の赤んぼう)",
                 "part":[6],
                 "curse":false,
                 "buy":1000,
