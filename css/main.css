@@ -10,10 +10,10 @@ body {
     position:relative;
 }
 #input{
-    top:0;
-    left:0;
+    top:20px;
+    left:20px;
     width:640px;
-    height:100px;
+    height:160px;
     position:relative;
 }
 
@@ -27,8 +27,8 @@ body {
     position: relative;
 }
 #firstHalf{
-    top:30px;
-    left:20px;
+    top:0px;
+    left:0px;
 }
 #lastHalf {
     top:0px;
@@ -37,7 +37,7 @@ body {
 
 .itemTypeRadio{
     top:0px;
-    left:0px;
+    left:20px;
     position:relative;
 }
 
@@ -48,7 +48,7 @@ body {
 
 #result {
     top:20px;
-    left:0px;
+    left:20px;
     width:640px;
     position:relative;
 }

@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <script src="./js/lib/jquery-1.11.0.min.js" charset="utf-8"></script>
     <script src="./src/diavoloJson.js"></script>
+    <script src="./js/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./js/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./js/lib/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
     <meta charset="UTF-8"/>
     <title>ディアボロの大冒険：店鑑定補助ページ</title>
 </head>
 <body>
     <div id="main">
-        <div id="firstHalf" class="serif">店主「この</a>
         <form id="input">
+            <div id="firstHalf" class="serif">店主「この</div>
             <input type="radio" class="itemType" name="itemType" value="equipment" checked>装備ディスク
             <input type="radio" class="itemType" name="itemType" value="memory">記憶ディスク
             <input type="radio" class="itemType" name="itemType" value="container">やばいもの
@@ -23,8 +26,8 @@
             <br />     は<br />
             <input id="price" name="price" value="0" onKeyPress="return submitStop(event);">
             <button id="appraisalButton" type="button" onclick="appraisal()">鑑定</button>
+            <div id="lastHalf" class="serif">になります。」</div>
         </form>
-        <div id="lastHalf" class="serif">になります。」</div>
         <div id="result"></div>
     </div>
 </body>
