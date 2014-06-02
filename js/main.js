@@ -84,7 +84,21 @@ function submitStop(e){
         return false;
     }
 }
-
+function itemTypeChange(){
+    return {
+        'click':function(){
+            appraisal();
+        }
+    }
+}
+function tradeTypeChange(){
+    return {
+        'click':function(){
+            appraisal();
+        }
+    }}
 $(function(){
     $("#price").on(numOnly());
+    $("[name='itemType']").on(itemTypeChange());
+    $("[name='tradeType']").on(tradeTypeChange());
 })
