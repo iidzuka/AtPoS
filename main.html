@@ -25,10 +25,12 @@
             <input type="radio" class="tradeType" name="tradeType" value="sell">売り値
             <br />     は<br />
             <input id="price" name="price" value="0" onKeyPress="return submitStop(event);">
-            <button id="appraisalButton" type="button" onclick="appraisal()">鑑定</button>
             <div id="lastHalf" class="serif">になります。」</div>
         </form>
-        <div id="result"></div>
+        <div class="container">
+            <table id="result" class="table">
+            </table>
+        </div>
     </div>
 </body>
 </html>

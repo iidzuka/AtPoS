@@ -1,6 +1,6 @@
 var diavolo = new diavoloJson();
 function appraisal(){
-    $("#result").empty();
+
     var itemType = $("input[name='itemType']:checked").val();
     var tradeType = $("input[name='tradeType']:checked").val();
     var inputPrice = Number($("input#price").val());
@@ -73,21 +73,60 @@ function submitStop(e){
         return false;
     }
 }
+
 function itemTypeChange(){
+    return {
+        'click':function(){
+            tableHeaderChange();
+            appraisal();
+        }
+    }
+}
+
+function tradeTypeChange(){
     return {
         'click':function(){
             appraisal();
         }
     }
 }
-function tradeTypeChange(){
-    return {
-        'click':function(){
-            appraisal();
-        }
-    }}
+
+function tableHeaderChange(){
+    var itemType = $("input[name='itemType']:checked").val();
+    $("#result").empty();
+    $("<thead>")
+        .appendTo("#result");
+    $("<tr>")
+        .appendTo("#result>thead");
+    $("<th>")
+        .html("アイテム名")
+        .appendTo("#result>thead>tr");
+    if(itemType == "equipment"){
+        $("<th>")
+            .html("強化値")
+            .appendTo("#result>thead>tr");    
+        $("<th>")
+            .html("登場部")
+            .appendTo("#result>thead>tr");    
+        $("<th>")
+            .html("備考")
+            .appendTo("#result>thead>tr");
+    }else if(itemType == "container"){
+        $("<th>")
+            .html("容量")
+            .appendTo("#result>thead>tr");    
+        $("<th>")
+            .html("登場部")
+            .appendTo("#result>thead>tr");    
+        $("<th>")
+            .html("備考")
+            .appendTo("#result>thead>tr");
+    }
+}
+
 $(function(){
     $("#price").on(numOnly());
     $("[name='itemType']").on(itemTypeChange());
     $("[name='tradeType']").on(tradeTypeChange());
+    tableHeaderChange();
 })
