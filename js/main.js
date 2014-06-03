@@ -43,13 +43,15 @@ function priceCheck(item,tradeType,itemType,price,count){
             itemObject.push(item.part.join(","))
             if(item.curse){
                 itemObject.push("確定呪いディスク");
-            }        
+            }else{
+                itemObject.push(" ");
+            }
         }else if(itemType == "container"){
             itemObject.push(item.part.join(","));
         }
     }else if(count < 3 && itemType == "equipment" && !(item.curse)){
         itemObject = priceCheck(item,tradeType,itemType,price,count+1);
-    }else if(count < 9 && itemType == "container" && !(item.fixation)){
+    }else if(count < 10 && itemType == "container" && !(item.fixation)){
         itemObject = priceCheck(item,tradeType,itemType,price,count+1);
     }
     return itemObject;
