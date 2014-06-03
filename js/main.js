@@ -1,6 +1,5 @@
 var diavolo = new diavoloJson();
 function appraisal(){
-
     var itemType = $("input[name='itemType']:checked").val();
     var tradeType = $("input[name='tradeType']:checked").val();
     var inputPrice = Number($("input#price").val());
@@ -8,11 +7,12 @@ function appraisal(){
     $.each(diavolo.json[itemType],function(index,item){
         list.push(priceCheck(item,tradeType,itemType,inputPrice,0));
     })
-    list = $.grep(list, function(e){return e;});
+    list = $.grep(list, function(e){if(e.length != 0){return e;}});
+    console.log(list);
     $.each(list,function(index,item){
         var writeText = item.name;
         if(itemType == "equipment"){
-            writeText = writeText + " 登場部:" + item.part.join(",");
+            writeText = writeText + " 登場部:";
             if(item.curse){
                 writeText = writeText +" 呪"
             }
@@ -25,23 +25,33 @@ function appraisal(){
 
 function priceCheck(item,tradeType,itemType,price,count){
     var modifire = 0;
-    var itemObject;
+    var itemObject = new Array();
     if(itemType == "equipment"){
         modifire = diavolo.json.setting.plusModifierPrice * count;
     }else if(itemType == "container"){
         modifire = diavolo.json.setting.capacityPrice * count;
     }
     if(item[tradeType]+modifire == price){
-        itemObject = $.extend(true,{},item);
+        itemObject.push(item.name);
         if(count > 0){
-            itemObject.name = itemObject.name +" +"+count;
+            itemObject.push("+"+count);
+        }else if(count == 0){
+            itemObject.push(" ");
+        }
+        if(itemType == "equipment"){
+            itemObject.push(item.part.join(","))
+            if(item.curse){
+                itemObject.push("確定呪いディスク");
+            }        
+        }else if(itemType == "container"){
+            itemObject.push(item.part.join(","));
         }
     }else if(count < 3 && itemType == "equipment" && !(item.curse)){
         itemObject = priceCheck(item,tradeType,itemType,price,count+1);
     }else if(count < 9 && itemType == "container" && !(item.fixation)){
         itemObject = priceCheck(item,tradeType,itemType,price,count+1);
     }
-    return itemObject
+    return itemObject;
 }
 
 function numOnly(){
