@@ -1,5 +1,6 @@
 var diavolo = new diavoloJson();
 function appraisal(){
+    tableHeaderChange();
     var itemType = $("input[name='itemType']:checked").val();
     var tradeType = $("input[name='tradeType']:checked").val();
     var inputPrice = Number($("input#price").val());
@@ -7,19 +8,19 @@ function appraisal(){
     $.each(diavolo.json[itemType],function(index,item){
         list.push(priceCheck(item,tradeType,itemType,inputPrice,0));
     })
-    list = $.grep(list, function(e){if(e.length != 0){return e;}});
-    console.log(list);
-    $.each(list,function(index,item){
-        var writeText = item.name;
-        if(itemType == "equipment"){
-            writeText = writeText + " 登場部:";
-            if(item.curse){
-                writeText = writeText +" 呪"
-            }
+    list = $.grep(list, function(e){
+        if(e.length != 0){
+            return e;
         }
-         $('<div class="result">')
-            .appendTo("#result")
-            .html(writeText);
+    });
+    $.each(list,function(itemIndex,item){
+        $('<tr>')
+            .appendTo("#result>tbody");
+        $.each(item,function(index,data){
+            $('<td>')
+                .html(data)
+                .appendTo("#result>tbody>tr:eq("+itemIndex+")");
+        })
     })
 }
 
@@ -87,7 +88,6 @@ function submitStop(e){
 function itemTypeChange(){
     return {
         'click':function(){
-            tableHeaderChange();
             appraisal();
         }
     }
@@ -105,6 +105,8 @@ function tableHeaderChange(){
     var itemType = $("input[name='itemType']:checked").val();
     $("#result").empty();
     $("<thead>")
+        .appendTo("#result");
+    $("<tbody>")
         .appendTo("#result");
     $("<tr>")
         .appendTo("#result>thead");
