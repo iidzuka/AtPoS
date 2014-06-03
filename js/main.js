@@ -140,5 +140,5 @@ $(function(){
     $("#price").on(numOnly());
     $("[name='itemType']").on(itemTypeChange());
     $("[name='tradeType']").on(tradeTypeChange());
-    tableHeaderChange();
+    appraisal();
 })
