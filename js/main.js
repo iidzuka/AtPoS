@@ -1,21 +1,10 @@
 var diavolo = new diavoloJson();
 function appraisal(){
     $("#result").empty();
-    var itemType;
-    var tradeType;
+    var itemType = $("input[name='itemType']:checked").val();
+    var tradeType = $("input[name='tradeType']:checked").val();
     var inputPrice = Number($("input#price").val());
-
     var list = new Array();
-    $.each($("input.itemType"),function(){
-        if(this.checked){
-            itemType = this.value;
-        }
-    })
-    $.each($("input.tradeType"),function(){
-        if(this.checked){
-            tradeType = this.value;
-        }
-    })
     $.each(diavolo.json[itemType],function(index,item){
         list.push(priceCheck(item,tradeType,itemType,inputPrice,0));
     })
