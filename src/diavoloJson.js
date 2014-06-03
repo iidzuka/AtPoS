@@ -702,120 +702,140 @@ function diavoloJson(){
             {
                 "name":"エニグマの紙",
                 "fixation":true,
+                "part":[4],
                 "buy":2400,
                 "sell":1200
             },
             {
                 "name":"形兆のDISCケース",
                 "fixation":false,
+                "part":[4],
                 "buy":400,
                 "sell":200
             },
             {
                 "name":"トラクターのタイヤ",
                 "fixation":false,
+                "part":[6],
                 "buy":400,
                 "sell":200
             },
             {
                 "name":"サンジェルマンの紙袋",
                 "fixation":false,
+                "part":[4],
                 "buy":400,
                 "sell":200
             },
             {
                 "name":"露伴のカバン",
                 "fixation":false,
+                "part":[4],
                 "buy":400,
                 "sell":200
             },
             {
                 "name":"グッチョの死体",
                 "fixation":false,
+                "part":[6],
                 "buy":1600,
                 "sell":800
             },
             {
                 "name":"カルネの死体",
                 "fixation":false,
+                "part":[5],
                 "buy":4600,
                 "sell":2300
             },
             {
                 "name":"DIOの骨",
                 "fixation":false,
+                "part":[6],
                 "buy":4600,
                 "sell":2300
             },
             {
                 "name":"聖人の眼球",
                 "fixation":false,
+                "part":[7],
                 "buy":2400,
                 "sell":1200
             },
             {
                 "name":"聖人の左腕",
                 "fixation":false,
+                "part":[7],
                 "buy":2400,
                 "sell":1200
             },
             {
                 "name":"グッチのバッグ",
                 "fixation":false,
+                "part":[],
                 "buy":4600,
                 "sell":2300
             },
             {
                 "name":"エルメェスのアレ",
                 "fixation":false,
+                "part":[6],
                 "buy":4600,
                 "sell":2300
             },
             {
                 "name":"ミキタカのカバン",
                 "fixation":false,
+                "part":[4],
                 "buy":2400,
                 "sell":1200
             },
             {
                 "name":"乳母車",
                 "fixation":false,
+                "part":[4],
                 "buy":4600,
                 "sell":2300
             },
             {
                 "name":"波紋のツボ",
                 "fixation":false,
+                "part":[1],
                 "buy":2700,
                 "sell":1350
             },
             {
                 "name":"ホルマジオのビン",
                 "fixation":false,
+                "part":[5],
                 "buy":2500,
                 "sell":1250
             },
             {
                 "name":"ランドセル",
                 "fixation":false,
+                "part":[4],
                 "buy":2600,
                 "sell":1300
             },
             {
                 "name":"サーフィス人形",
                 "fixation":false,
+                "part":[4],
                 "buy":2800,
                 "sell":1400
             },
             {
                 "name":"聖人の脊椎",
                 "fixation":false,
+                "part":[7],
                 "buy":2900,
                 "sell":1350
             },
             {
                 "name":"ごま蜜団子",
                 "fixation":false,
+                "part":[8],
                 "buy":2700,
                 "sell":1350
             }        
