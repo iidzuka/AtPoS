@@ -57,11 +57,31 @@ function priceCheck(item,tradeType,itemType,price,count){
     return itemObject;
 }
 
-function numOnly(){
+function formRules(){
     return {
         'paste': function(e) {
             e.preventDefault();
         },
+
+        'keydown' : function(e){
+            var keyCode = e.keyCode;
+            var radioName;
+            if(e.shiftKey && keyCode == 9){
+                radioName = "tradeType";
+            }else if(keyCode == 9){
+                radioName = "itemType";
+            }
+            if(radioName != undefined){
+                e.preventDefault();
+                var nextRadio = $("input[name='"+radioName+"']:checked").next("."+radioName);
+                if(nextRadio.length == 0){
+                    nextRadio = $("input[name='"+radioName+"']").first();
+                }
+                nextRadio.prop('checked', true);
+                appraisal();
+            }
+        },
+
         'keyup': function () {
             var $this = $(this);
             var s = new Array();
@@ -139,7 +159,7 @@ function tableHeaderChange(){
 }
 
 $(function(){
-    $("#price").on(numOnly());
+    $("#price").on(formRules());
     $("[name='itemType']").on(itemTypeChange());
     $("[name='tradeType']").on(tradeTypeChange());
     appraisal();
