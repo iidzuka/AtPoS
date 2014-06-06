@@ -44,7 +44,7 @@ function priceCheck(item,tradeType,itemType,price,count){
             if(item.curse){
                 itemObject.push("確定呪いディスク");
             }else{
-                itemObject.push(" ");
+                itemObject.push(item.remarks);
             }
         }else if(itemType == "container"){
             itemObject.push(item.part.join(","));
