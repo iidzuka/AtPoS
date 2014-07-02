@@ -3,10 +3,11 @@ function appraisal(){
     tableHeaderChange();
     var itemType = $("input[name='itemType']:checked").val();
     var tradeType = $("input[name='tradeType']:checked").val();
+    var allFlag = $("input[name='all']")[0].checked;
     var inputPrice = Number($("input#price").val());
     var list = new Array();
     $.each(diavolo.json[itemType],function(index,item){
-        list.push(priceCheck(item,tradeType,itemType,inputPrice,0));
+        list.push(priceCheck(item,tradeType,itemType,inputPrice,allFlag,0));
     })
     list = $.grep(list, function(e){
         if(e.length != 0){
@@ -24,7 +25,7 @@ function appraisal(){
     })
 }
 
-function priceCheck(item,tradeType,itemType,price,count){
+function priceCheck(item,tradeType,itemType,price,allFlag,count){
     var modifire = 0;
     var itemObject = new Array();
     if(itemType == "equipment"){
@@ -32,7 +33,8 @@ function priceCheck(item,tradeType,itemType,price,count){
     }else if(itemType == "container"){
         modifire = diavolo.json.setting.capacityPrice * count;
     }
-    if(item[tradeType]+modifire == price){
+    if(item[tradeType]+modifire == price || allFlag){
+        console.log(allFlag)
         itemObject.push(item.name);
         if(count > 0){
             itemObject.push("+"+count);
@@ -50,9 +52,9 @@ function priceCheck(item,tradeType,itemType,price,count){
             itemObject.push(item.part.join(","));
         }
     }else if(count < 3 && itemType == "equipment" && !(item.curse)){
-        itemObject = priceCheck(item,tradeType,itemType,price,count+1);
+        itemObject = priceCheck(item,tradeType,itemType,price,allFlag,count+1);
     }else if(count < 10 && itemType == "container" && !(item.fixation)){
-        itemObject = priceCheck(item,tradeType,itemType,price,count+1);
+        itemObject = priceCheck(item,tradeType,itemType,price,allFlag,count+1);
     }
     return itemObject;
 }
