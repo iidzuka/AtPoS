@@ -59,6 +59,7 @@ function priceCheck(item,tradeType,itemType,price,allFlag,count){
             }
         }else if(itemType == "container"){
             itemObject.push(item.part.join(","));
+            itemObject.push(item.remarks);    
         }
     }else if(count < 3 && itemType == "equipment" && !(item.curse)){
         itemObject = priceCheck(item,tradeType,itemType,price,allFlag,count+1);
