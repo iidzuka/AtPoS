@@ -85,7 +85,8 @@ function formRules(){
             }
             if(radioName != undefined){
                 e.preventDefault();
-                var nextRadio = $("input[name='"+radioName+"']:checked").next("."+radioName);
+                var nextRadio = $("input[name='"+radioName+"']:checked").nextAll("."+radioName).eq(0);
+                console.log(nextRadio)
                 if(nextRadio.length == 0){
                     nextRadio = $("input[name='"+radioName+"']").first();
                 }
