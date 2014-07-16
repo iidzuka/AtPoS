@@ -52,6 +52,23 @@ body {
     width:640px;
     position:relative;
 }
+.container{
+    width:700px;
+    height:800px;
+    background-image: url(../img/back.png);
+}
+#result td {
+    border:none;
+    background-image: url(../img/line.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+#result th {
+    border:none;
+    background-image: url(../img/line.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
 
 .result{
     top:0px;

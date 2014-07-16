@@ -6,6 +6,7 @@
     <script src="./js/lib/jquery-1.11.0.min.js" charset="utf-8"></script>
     <script src="./src/diavoloJson.js"></script>
     <script src="./js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/lib/baseline.js"></script>
     <script src="./js/main.js"></script>
     <link rel="stylesheet" href="./js/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./js/lib/bootstrap/css/bootstrap-theme.min.css">
@@ -15,27 +16,23 @@
 </head>
 <body>
     <div id="main">
-        <form id="input">
-            <div id="firstHalf" class="serif">店主「この</div>
-            <input type="radio" class="itemType" name="itemType" value="equipment" checked=true>装備ディスク
-            <input type="radio" class="itemType" name="itemType" value="memory">記憶ディスク
-            <input type="radio" class="itemType" name="itemType" value="container">やばいもの
-            <br />     の<br />
-            <input type="radio" class="tradeType" name="tradeType" value="buy" checked>買い値
-            <input type="radio" class="tradeType" name="tradeType" value="sell">売り値
-            <input type="checkbox" name="all" value="all">全て
-            <br />     は<br />
-            <input id="price" name="price" value="0" onKeyPress="return submitStop(event);">
-            <div id="lastHalf" class="serif">になります。」</div>
-        </form>
-        <form>
-            <fieldset>
-            </fieldset>
-        </form>
-        <div class="container">
-            <table id="result" class="table table-striped table-bordered table-condensed">
-            </table>
-        </div>
+            <form id="input">
+                <input type="radio" class="itemType" name="itemType" value="equipment" checked=true>装備ディスク
+                <input type="radio" class="itemType" name="itemType" value="memory">記憶ディスク
+                <input type="radio" class="itemType" name="itemType" value="container">やばいもの
+                <br>
+                <br>
+                <input type="radio" class="tradeType" name="tradeType" value="buy" checked>買い値
+                <input type="radio" class="tradeType" name="tradeType" value="sell">売り値
+                <input type="checkbox" name="all" value="all">全て
+                <br>
+                <br>
+                <input id="price" name="price" value="0" onKeyPress="return submitStop(event);">
+            </form>
+            <div class="container">
+                <table id="result" class="table table-condensed">
+                </table>
+            </div>
     </div>
 </body>
 </html>

@@ -18,11 +18,20 @@ function appraisal(){
         $('<tr>')
             .appendTo("#result>tbody");
         $.each(item,function(index,data){
-            $('<td>')
+                $('<td>')
                 .html(data)
                 .appendTo("#result>tbody>tr:eq("+itemIndex+")");
+
         })
     })
+    /*$.each(list,function(itemIndex,item){
+            $.each(item,function(index,data){
+            $(".container")
+                .append(data);
+        })
+        $(".container")
+            .append("<br />");
+    })*/
 }
 
 function priceCheck(item,tradeType,itemType,price,allFlag,count){
