@@ -6,7 +6,7 @@ body {
     top:0;
     left:0;
     width:640px;
-    min-height:1280px;
+    min-height:500px;
     background-image: url(../img/back.png);
     position:relative;
 }
@@ -55,7 +55,7 @@ body {
 }
 .container{
     width:640px;
-    min-height:800px;
+    min-height:600px;
 }
 #result td {
     border:none;
