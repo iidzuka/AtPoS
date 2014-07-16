@@ -17,14 +17,20 @@
 <body>
     <div id="main">
             <form id="input">
-                <input type="radio" class="itemType" name="itemType" value="equipment" checked=true>装備ディスク
-                <input type="radio" class="itemType" name="itemType" value="memory">記憶ディスク
-                <input type="radio" class="itemType" name="itemType" value="container">やばいもの
+                <input id="equipment" type="radio" class="itemType" name="itemType" value="equipment" checked=true>
+                <label for="equipment">装備ディスク</label>
+                <input id="memory" type="radio" class="itemType" name="itemType" value="memory">
+                <label for="memory">記憶ディスク</label>
+                <input id="container" type="radio" class="itemType" name="itemType" value="container">
+                <label for="container">やばいもの</label>
                 <br>
                 <br>
-                <input type="radio" class="tradeType" name="tradeType" value="buy" checked>買い値
-                <input type="radio" class="tradeType" name="tradeType" value="sell">売り値
-                <input type="checkbox" name="all" value="all">全て
+                <input id="buy" type="radio" class="tradeType" name="tradeType" value="buy" checked>
+                <label for="buy">買い値</label>
+                <input id="sell" type="radio" class="tradeType" name="tradeType" value="sell">
+                <label for="sell">売り値</label>
+                <input id="all" type="checkbox" name="all" value="all">
+                <label for="all">全て</label>
                 <br>
                 <br>
                 <input id="price" name="price" value="0" onKeyPress="return submitStop(event);">
